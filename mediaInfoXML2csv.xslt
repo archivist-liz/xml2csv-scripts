@@ -2,7 +2,7 @@
     <xsl:template match="MediaInfo:MediaInfo">
 
 
-        <xsl:text>fileName,videoCount,audioCount,fileExtension,format,formatProfile,codecID,codecIDCompatible,fileSize,duration,overallBitRate_Mode,overallBitRate,streamSize,title,track,producer,description,encodedDate,encodedLibrary,<!--encodedLibrarySettings,-->lastModifiedDate,lastModifiedDate_Local,streamOrder,ID,format,formatSettingsMatrix,codecID,duration,bitRateMode,bitRate,width,height,pixelAspectRation,displayAccessRatio,frameRate,frameRateOriginal,frameCount,colorSpace,chromaSubsampling,standard,bitDepth,scanType,compressionMode,encodedLibrary,streamOrder,ID,format,formatSettingsEndianness,formatSettingsSign,codecID,duration,bitRateMode,bitRate,channels,samplingRate,samplingCount,bitDepth,streamSize,streamSizeProportion,compressionMode,encodedLibrary</xsl:text>
+        <xsl:text>fileName,videoCount,audioCount,fileExtension,format,formatProfile,codecID,codecIDCompatible,fileSize,duration,overallBitRate_Mode,overallBitRate,streamSize,title,track,producer,description,encodedDate,encodedLibrary,encodedLibrarySettings,lastModifiedDate,lastModifiedDate_Local,streamOrder,ID,format,formatSettingsMatrix,codecID,duration,bitRateMode,bitRate,width,height,pixelAspectRation,displayAccessRatio,frameRate,frameRateOriginal,frameCount,colorSpace,chromaSubsampling,standard,bitDepth,scanType,compressionMode,encodedLibrary,streamOrder,ID,format,formatSettingsEndianness,formatSettingsSign,codecID,duration,bitRateMode,bitRate,channels,samplingRate,samplingCount,bitDepth,streamSize,streamSizeProportion,compressionMode,encodedLibrary</xsl:text>
 
         <xsl:text>&#10;</xsl:text>
         <xsl:for-each select="MediaInfo:media" >
@@ -22,10 +22,10 @@
 		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Title"/><xsl:text>,</xsl:text>
 		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Track"/><xsl:text>,</xsl:text>
 		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Producer"/><xsl:text>,</xsl:text>
-		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Description"/><xsl:text>,</xsl:text>
+		<xsl:text>&#34;</xsl:text><xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Description"/><xsl:text>&#34;</xsl:text><xsl:text>,</xsl:text>
 		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Encoded_Date"/><xsl:text>,</xsl:text>
 		<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Encoded_Library"/><xsl:text>,</xsl:text>
-		<!--<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Encoded_Library_Settings"/><xsl:text>,</xsl:text>-->
+		<xsl:text>&#34;</xsl:text><xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:Encoded_Library_Settings"/><xsl:text>&#34;</xsl:text><xsl:text>,</xsl:text>
             	<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:File_Modified_Date"/><xsl:text>,</xsl:text>
             	<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:File_Modified_Date_Local"/><xsl:text>,</xsl:text>
 		<xsl:value-of select="MediaInfo:track[@type = 'Video']/MediaInfo:StreamOrder"/><xsl:text>,</xsl:text>
