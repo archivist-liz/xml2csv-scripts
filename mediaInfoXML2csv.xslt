@@ -2,11 +2,12 @@
     <xsl:template match="MediaInfo:MediaInfo">
 
 
-        <xsl:text>fileName,videoCount,audioCount,fileExtension,format,formatProfile,codecID,codecIDCompatible,fileSize,duration,overallBitRate_Mode,overallBitRate,streamSize,title,track,producer,description,encodedDate,encodedLibrary,encodedLibrarySettings,lastModifiedDate,lastModifiedDate_Local,streamOrder,ID,format,formatSettingsMatrix,codecID,duration,bitRateMode,bitRate,width,height,pixelAspectRation,displayAccessRatio,frameRate,frameRateOriginal,frameCount,colorSpace,chromaSubsampling,standard,bitDepth,scanType,compressionMode,encodedLibrary,streamOrder,ID,format,formatSettingsEndianness,formatSettingsSign,codecID,duration,bitRateMode,bitRate,channels,samplingRate,samplingCount,bitDepth,streamSize,streamSizeProportion,compressionMode,encodedLibrary</xsl:text>
+        <xsl:text>fileName,registryName,videoCount,audioCount,fileExtension,format,formatProfile,codecID,codecIDCompatible,fileSize,duration,overallBitRate_Mode,overallBitRate,streamSize,title,track,producer,description,encodedDate,encodedLibrary,encodedLibrarySettings,lastModifiedDate,lastModifiedDate_Local,streamOrder,ID,format,formatSettingsMatrix,codecID,duration,bitRateMode,bitRate,width,height,pixelAspectRation,displayAccessRatio,frameRate,frameRateOriginal,frameCount,colorSpace,chromaSubsampling,standard,bitDepth,scanType,compressionMode,encodedLibrary,streamOrder,ID,format,formatSettingsEndianness,formatSettingsSign,codecID,duration,bitRateMode,bitRate,channels,samplingRate,samplingCount,bitDepth,streamSize,streamSizeProportion,compressionMode,encodedLibrary</xsl:text>
 
         <xsl:text>&#10;</xsl:text>
         <xsl:for-each select="MediaInfo:media" >
             	<xsl:value-of select="@ref"/><xsl:text>,</xsl:text>
+		<xsl:text>MediaInfo,</xsl:text>
 	    	<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:VideoCount"/><xsl:text>,</xsl:text>
             	<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:AudioCount"/><xsl:text>,</xsl:text>
             	<xsl:value-of select="MediaInfo:track[@type = 'General']/MediaInfo:FileExtension"/><xsl:text>,</xsl:text>
